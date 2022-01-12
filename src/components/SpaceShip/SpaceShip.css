@@ -1,2 +1,19 @@
-.ship{
+.ship {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+    box-shadow: 0 0 0 1px;
+    align-items: center;
+}
+
+img {
+    width: 100px;
+}
+
+p {
+    font-size: 11px;
+}
+
+h4 {
+    margin-bottom: 0;
 }

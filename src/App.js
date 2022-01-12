@@ -1,14 +1,14 @@
 import './App.css';
-import SpaceShip from "./components/SpaceShip/SpaceShip";
-
-
+import SpaceShips from "./components/SpaceShips/SpaceShips";
 
 function App() {
-  return (
-      <div>
+    return (
+        <div>
 
-      </div>
-  );
+            <SpaceShips/>
+
+        </div>
+    );
 }
 
 export default App;
