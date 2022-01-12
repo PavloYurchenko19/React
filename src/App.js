@@ -1,4 +1,7 @@
 import './App.css';
+import SpaceShip from "./components/SpaceShip/SpaceShip";
+
+
 
 function App() {
   return (
