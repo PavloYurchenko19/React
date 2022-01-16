@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+}
+.main__users{
+    display: flex;
+}
+.user__right{
+    width: 50%;
+    background: darksalmon;
+}
+.user__left{
+    width: 50%;
+    background: darkorange;
+}
+.post__main{
+    background: tan;
+}

@@ -1,0 +1,11 @@
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.detail button{
+    width: 100px;
+}
+.detail h2{
+padding-left: 20%
+}

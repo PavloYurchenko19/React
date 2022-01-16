@@ -1,0 +1,7 @@
+.user{
+    width: 50%;
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    padding-left: 200px;
+}
