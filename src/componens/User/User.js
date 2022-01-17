@@ -1,9 +1,12 @@
 import React from 'react';
 
+
+import './User.css'
+
 const User = ({user: {id, name, username, email}}) => {
 
     return (
-        <div>
+        <div className={"user"}>
             {id}--{name}--{username}--{email}
         </div>
     );
