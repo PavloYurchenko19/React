@@ -1,0 +1,11 @@
+.user_page_main{
+    display: flex;
+}
+.users__left{
+    background: gray;
+    height: auto;
+    width: 50%;
+}
+.users__right{
+    width: 50%;
+}
