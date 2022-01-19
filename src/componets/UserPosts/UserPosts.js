@@ -1,30 +1,29 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+
+
 import {postService} from "../../axios.service/post.service";
+import UserPost from "../UsersPost/UserPost";
 
 const UserPosts = () => {
 
     const {id} = useParams();
 
-    const [post, setPost] = useState(null);
+    const [post, setPost] = useState([]);
 
-    useEffect(()=>{
-        postService.getById(id)
-            .then(value => setPost({...value}))
+    useEffect(() => {
 
+        postService.getAll()
+            .then(value => {
+                let filter = value.filter((value) => value.userId.toString() === id);
+                setPost(filter)
+            })
 
-    },[])
+    }, [])
 
     return (
         <div>
-            {post && (<div >
-                    {post.userId}
-                    {post.id}
-                    {post.title}
-                    {post.body}
-                </div>
-
-            )}
+            {post && post.map(post => <UserPost key={post.id} post={post}/>)}
         </div>
     );
 };

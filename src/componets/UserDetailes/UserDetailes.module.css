@@ -1,8 +1,13 @@
 .users__right {
     margin-top: 0;
     background: tan;
-    height: inherit ;
+    height: inherit;
 }
-.users__right h2{
+
+.users__right h2 {
     margin-top: 0;
+}
+
+.outlet {
+    background: sienna;
 }

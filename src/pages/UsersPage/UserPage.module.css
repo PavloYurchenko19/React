@@ -1,11 +1,58 @@
-.user_page_main{
+.user_page_main {
     display: flex;
+    min-height: calc(100vh - 70px);
 }
-.users__left{
-    background: gray;
+
+.users__left {
+    background: black;
     height: auto;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    line-height: 40px;
 }
-.users__right{
+
+.users__left a {
+    text-decoration: none;
+    color: snow;
+    font-size: 20px;
+
+}
+
+.users__left button {
+    background: black;
+    color: snow;
+
+    margin-left: 20px;
+    border: 1px solid snow;
+}
+
+.users__right {
+    background: goldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-right: 20px;
+    height: 400px;
+}
+
+.user__right .btn {
+    background: #000;
+}
+
+img {
+    height: 300px;
+}
+
+.black__bg {
+
     width: 50%;
+
+    background: #000;
+}
+
+.users__right h2 {
+    color: blue;
 }

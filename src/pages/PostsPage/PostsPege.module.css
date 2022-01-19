@@ -1,0 +1,22 @@
+.post__page_main {
+    display: flex;
+
+
+}
+
+.posts__page {
+    width: 50%;
+    background: snow;
+
+
+}
+
+.post__detail {
+    width: 50%;
+    justify-content: center;
+}
+
+.post__page a {
+    text-decoration: none;
+
+}

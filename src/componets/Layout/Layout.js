@@ -6,10 +6,12 @@ import style from "./Layout.module.css";
 
 const Layout = () => {
     return (
-        <div>
+        <div className={style.layout__main}>
             <div className={style.header}>
+
                 <NavLink to="/posts">Post</NavLink>
                 <NavLink to="/users">User</NavLink>
+                <NavLink to="/">Home</NavLink>
 
             </div>
             <Outlet/>

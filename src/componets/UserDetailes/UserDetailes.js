@@ -9,38 +9,51 @@ const UserDetailes = () => {
 
 
     const {id} = useParams();
-    const [userDetail, setUserDetail] = useState(null);
-    useEffect(()=>{
-       userService.getById(id)
-           .then(userDetailes => setUserDetail({...userDetailes}) )
-    },[id])
 
+    const [userDetail, setUserDetail] = useState(null);
+
+    useEffect(() => {
+
+        userService.getById(id)
+            .then(userDetailes => setUserDetail({...userDetailes}))
+
+    }, [id])
 
 
     return (
+
         <div className={style.users__right}>
-            {userDetail &&(
-            <div><h2>{userDetail.id}</h2>
-                <h2>{userDetail.name} {userDetail.username}</h2>
-                {userDetail.email}
-                {userDetail.address.street}
-                {userDetail.address.suite}
-                {userDetail.address.city}
-                {userDetail.address.zipcode}
-                {userDetail.address.geo.lat}
-                {userDetail.address.geo.lng}
+
+            {userDetail && (
+
                 <div>
-                    <Link to={id.toString()}>
-                        <button>Open posts</button>
-                    </Link>
+
+                    <h2>{userDetail.id}</h2>
+                    <h2>{userDetail.name} {userDetail.username}</h2>
+                    <p>{userDetail.email}</p>
+                    <p>{userDetail.address.street}</p>
+                    <p>{userDetail.address.suite}</p>
+                    <p>{userDetail.address.city}</p>
+                    <p>{userDetail.address.zipcode}</p>
+                    <p>Geo : </p>
+                    <ul>
+                        <li>{userDetail.address.geo.lat}</li>
+
+                        <li>{userDetail.address.geo.lng}</li>
+                    </ul>
+                    <div>
+                        <Link to={id.toString()}>
+                            <button>Open posts</button>
+                        </Link>
+                    </div>
+
                 </div>
 
-            </div>
-
             )}
-            <div>
+            <div className={style.outlet}>
 
                 <Outlet/>
+
             </div>
         </div>
     );

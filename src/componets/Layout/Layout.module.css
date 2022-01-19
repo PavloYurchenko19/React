@@ -12,6 +12,7 @@
     color: snow;
     text-decoration: none;
 }
-.header a[class='active']{
+
+.header a[class='active'] {
     color: blue;
 }
