@@ -8,6 +8,7 @@ import UserPosts from "./componets/UserPosts/UserPosts";
 import PostDetail from "./componets/PostDetail/PostDetail";
 import Comments from "./componets/Comments/Comments";
 import Alboms from "./componets/Alboms/Alboms";
+import './App.module.css'
 
 
 function App() {
