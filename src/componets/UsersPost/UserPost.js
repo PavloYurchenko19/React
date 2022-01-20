@@ -21,4 +21,4 @@ const UserPost = ({post: {id, userId, title, body}}) => {
     );
 };
 
-export default UserPost;
+export {UserPost};

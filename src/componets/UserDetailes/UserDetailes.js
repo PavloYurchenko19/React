@@ -65,4 +65,4 @@ const UserDetailes = () => {
     );
 };
 
-export default UserDetailes;
+export {UserDetailes};

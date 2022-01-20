@@ -2,12 +2,8 @@ import {Route, Routes} from "react-router-dom";
 
 
 import {Home, PostsPage, UsersPage} from "./pages";
-import Layout from "./componets/Layout/Layout";
-import UserDetailes from "./componets/UserDetailes/UserDetailes";
-import UserPosts from "./componets/UserPosts/UserPosts";
-import PostDetail from "./componets/PostDetail/PostDetail";
-import Comments from "./componets/Comments/Comments";
-import Alboms from "./componets/Alboms/Alboms";
+import {Layout,UserDetailes,UserPosts,PostDetail,Comments,Alboms} from "./componets/index";
+
 import './App.module.css'
 
 

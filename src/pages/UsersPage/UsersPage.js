@@ -1,7 +1,7 @@
 import {Outlet} from "react-router-dom";
 
 
-import Users from "../../componets/Users/Users";
+import {Users} from "../../componets/index";
 import style from './UserPage.module.css'
 
 const UsersPage = () => {

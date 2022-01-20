@@ -14,4 +14,4 @@ const Comment = ({comment: {id, postId, name, email, body}}) => {
     );
 };
 
-export default Comment;
+export {Comment};

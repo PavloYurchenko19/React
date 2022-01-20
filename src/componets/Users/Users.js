@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 
 import {userService} from "../../axios.service/user.service";
-import User from "../User/User";
+import {User} from "../index";
 
 const Users = () => {
 
@@ -21,4 +21,4 @@ const Users = () => {
     );
 };
 
-export default Users;
+export {Users};

@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 
 
 import {postService} from "../../axios.service/post.service";
-import UserPost from "../UsersPost/UserPost";
+import {UserPost} from "../index";
 
 const UserPosts = () => {
 
@@ -28,4 +28,4 @@ const UserPosts = () => {
     );
 };
 
-export default UserPosts;
+export {UserPosts};

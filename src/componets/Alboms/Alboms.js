@@ -70,4 +70,4 @@ const Alboms = () => {
     );
 };
 
-export default Alboms;
+export {Alboms};

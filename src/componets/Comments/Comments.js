@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 
 
 import {commentService} from "../../axios.service/comment.service";
-import Comment from "../Comment/Comment";
+import {Comment} from "../Comment/Comment";
 
 const Comments = () => {
     const {id} = useParams();
@@ -28,4 +28,4 @@ const Comments = () => {
     );
 };
 
-export default Comments;
+export {Comments};

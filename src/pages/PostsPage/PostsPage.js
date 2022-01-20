@@ -1,7 +1,7 @@
 import {Outlet} from "react-router-dom";
 
 
-import Posts from "../../componets/Posts/Posts";
+import {Posts} from "../../componets/index";
 import style from './PostsPege.module.css'
 
 const PostsPage = () => {

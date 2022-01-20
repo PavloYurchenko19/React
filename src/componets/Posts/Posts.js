@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {postService} from "../../axios.service/post.service";
-import Post from "../Post/Post";
+import {Post} from "../index";
 import style from './Posts.module.css'
 
 const Posts = () => {
@@ -24,4 +24,4 @@ const Posts = () => {
     );
 };
 
-export default Posts;
+export {Posts};
