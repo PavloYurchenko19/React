@@ -4,6 +4,8 @@ import {useParams} from "react-router-dom";
 import {userService} from "../../axios.service/user.service";
 import {albom} from "../../config/Albom";
 
+import style from './Alboms.module.css'
+
 const Alboms = () => {
     const {id} = useParams();
 
@@ -47,12 +49,16 @@ const Alboms = () => {
 
             {user && (
                 <>
+                    <div className={style.main__albom}>
+
                     <h2>{user.id}</h2>
                     <h2>{user.name}</h2>
-
-                    <button id={'btn1'} onClick={() => previousFoto(number)}>previous Foto</button>
-                    <img src={foto[number]} alt=""/>
-                    <button id={'btn2'} onClick={() => nextFoto(number)}>next Foto</button>
+                    <div className={style.df}>
+                        <button className={style.btn} onClick={() => previousFoto(number)}>previous Foto</button>
+                        <img src={foto[number]} alt=""/>
+                        <button className={style.btn} onClick={() => nextFoto(number)}>next Foto</button>
+                    </div>
+                </div>
 
                 </>
             )

@@ -1,0 +1,13 @@
+.user__all_post {
+    background: #000;
+    display: flex;
+    color: snow;
+    flex-direction: column;
+    border: 1px solid snow;
+    margin: 20px;
+    align-items: center;
+    padding: 10px;
+}
+p:first-letter{
+    margin-left: 15px;
+}

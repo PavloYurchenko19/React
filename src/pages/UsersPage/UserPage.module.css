@@ -28,23 +28,16 @@
 }
 
 .users__right {
-    background: goldenrod;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-radius: 50px;
-    margin-right: 20px;
-    height: 400px;
+
 }
 
 .user__right .btn {
     background: #000;
 }
 
-img {
-    height: 300px;
-}
 
 .black__bg {
 
@@ -53,6 +46,3 @@ img {
     background: #000;
 }
 
-.users__right h2 {
-    color: blue;
-}

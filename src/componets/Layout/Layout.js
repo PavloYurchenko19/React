@@ -11,7 +11,6 @@ const Layout = () => {
 
                 <NavLink to="/posts">Post</NavLink>
                 <NavLink to="/users">User</NavLink>
-                <NavLink to="/">Home</NavLink>
 
             </div>
             <Outlet/>

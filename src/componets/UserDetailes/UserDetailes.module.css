@@ -1,13 +1,28 @@
 .users__right {
     margin-top: 0;
-    background: tan;
     height: inherit;
+
 }
 
 .users__right h2 {
     margin-top: 0;
 }
+.user__detail_header{
 
-.outlet {
-    background: sienna;
+    line-height: 30px;
+
+    display: flex;
+    flex-direction: column;
+
 }
+
+.user__detail {
+
+    color: snow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+

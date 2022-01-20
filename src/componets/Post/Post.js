@@ -13,7 +13,7 @@ const Post = ({post}) => {
         <div className={style.posts}>
 
             <h2>Post : {id}</h2>
-            <Link to={id.toString()}><h2>{title}</h2></Link>
+            <Link to={id.toString()}><h2>Open detaile : {title}</h2></Link>
 
         </div>
     );

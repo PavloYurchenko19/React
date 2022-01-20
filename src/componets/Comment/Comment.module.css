@@ -1,9 +1,9 @@
-.post__detail{
-    background: black;
+.comment{
+    background: #000;
     color: snow;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    height: auto;
+    text-align: center;
 }

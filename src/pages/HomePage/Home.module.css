@@ -1,0 +1,7 @@
+.main{
+    background: #000;
+    height: calc(100vh - 70px);
+    color: snow;
+    display: flex;
+    justify-content: center;
+}

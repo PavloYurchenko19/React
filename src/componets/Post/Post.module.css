@@ -1,4 +1,18 @@
 .posts {
     border: 1px solid #000;
     background: #000;
+    color: snow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid snow;
+    border-right: 1px solid snow;
+
+}
+.posts a{
+    color: snow;
+    text-decoration: none;
+
 }

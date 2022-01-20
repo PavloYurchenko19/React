@@ -1,10 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-import style from './Posts.css'
-
-
 import {postService} from "../../axios.service/post.service";
 import Post from "../Post/Post";
+import style from './Posts.module.css'
 
 const Posts = () => {
 
@@ -20,7 +18,7 @@ const Posts = () => {
 
 
     return (
-        <div className={style.posts}>
+        <div className={style.post}>
             {posts.map(post => <Post key={post.id} post={post}/>)}
         </div>
     );
