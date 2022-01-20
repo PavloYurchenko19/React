@@ -1,44 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import Users from "../Users/Users";
 
-const Form = () => {
+const Form = ({getFilter}) => {
 
-    const [form, setForm] = useState({name:'', age: 0});
-    const [u, setU] = useState(null);
-    const [a,setA] = useState(null)
+    const [form,seForm] = useState({name:'',username:'', email: ''})
 
-    let user = {name:'pavlo'}
-
-
- console.log(form);
-    function formHendler(e) {
-        const eventData = {...form,[e.target.name]:e.target.value}
-        setForm({...form, ...eventData})
-        setU(user)
-
-
+    function formHendler (e){
+        const eventData = {...form, [e.target.name]: e.target.value};
+        seForm({...form,...eventData})
+        getFilter(eventData)
     }
-    const send = (e) =>{
-        e.preventDefault()
-    }
-    function get  () {
-        let includes = u
-        if(u.name){
-            includes = u.name.includes(form.name.value);
-        }
-        setA(includes)
 
-
-    }
 
     return (
         <div>
-            <Users form={form}/>
-            <form onSubmit={send}>
-                <input type="text"  name={'name'} value={form.name} onChange={formHendler}/>
-                <input type='number' name={'age'} value={form.age} onChange={formHendler}/>
-                <button>Send</button>
+            <form>
+                <input type="text" value={form.name} name={'name'} onChange={formHendler}/>
+                <input type="text" value={form.username} name={'username'} onChange={formHendler}/>
+                <input type="text" value={form.email} name={'email'} onChange={formHendler}/>
             </form>
+
         </div>
     );
 };

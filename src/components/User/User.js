@@ -1,10 +1,11 @@
 import React from 'react';
 
-const User = () => {
+const User = ({user:{username,name,email}}) => {
+
 
     return (
         <div>
-
+            {name}----{username}----{email}
             
         </div>
     );
