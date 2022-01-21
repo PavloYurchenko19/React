@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
+
+
 import {postsService} from "../../service/posts.service";
 import {UserPost} from "../UserPost/UserPost";
 

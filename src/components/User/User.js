@@ -14,7 +14,7 @@ const User = ({user}) => {
                 <button>Open albom</button>
             </Link>
 
-            <Link to={`${id.toString()}/detail`} state={user}>
+            <Link to={id.toString()} state={user}>
                 <button>Open UserDetails</button>
 
             </Link>
