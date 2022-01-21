@@ -1,7 +1,7 @@
 import './App.css';
 import {Outlet, Route, Routes} from "react-router-dom";
 import {HomePage, PostsPage, UsersPage} from "./page";
-import {Alboms, Loyout, UserDeteils} from "./components";
+import {Alboms, Loyout, UserDeteils, UsersPosts} from "./components";
 import {PostsDetails} from "./components/PostsDetails/PostsDetails";
 
 function App() {
@@ -13,7 +13,9 @@ function App() {
 
                         <Route path={'users'} element={<UsersPage/>}>
                             <Route path={':id/albom'} element={<Alboms/>}/>
-                            <Route path={':id/details'} element={<UserDeteils/>}/>
+                            <Route path={':id/details'} element={<UserDeteils/>}>
+                                <Route path={':id/posts'} element={<UsersPosts/>}/>
+                            </Route>
                         </Route>
                         <Route path={'posts'} element={<PostsPage/>}>
                             <Route path={':id/details'} element={<PostsDetails/>}/>
