@@ -1,7 +1,9 @@
 import './App.css';
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
+
+
 import {HomePage, PostsPage, UsersPage} from "./page";
-import {Alboms, Photos, Loyout, UserDeteils, UsersPosts, Comments} from "./components";
+import {Alboms, Comments, Loyout, Photos, UserDeteils, UsersPosts} from "./components";
 import {PostsDetails} from "./components/PostsDetails/PostsDetails";
 
 function App() {
@@ -9,6 +11,7 @@ function App() {
         <div>
             <Routes>
                 <Route path={'/'} element={<Loyout/>}>
+                    <Route index element={<Navigate to={'users'}/>}/>
                     <Route element={<HomePage/>}>
 
                         <Route path={'users'} element={<UsersPage/>}>
@@ -18,23 +21,18 @@ function App() {
                             </Route>
 
                             <Route path={':id'} element={<UserDeteils/>}>
-                                <Route path={':id'} element={<UsersPosts/>}/>
+                                <Route path={':postId/posts'} element={<UsersPosts/>}/>
 
                             </Route>
                         </Route>
                         <Route path={'posts'} element={<PostsPage/>}>
                             <Route path={':id/detail'} element={<PostsDetails/>}>
-                                <Route path={':id/comment' } elemetn={<Comments/>}/>
+                                <Route path={':postId/comment'} element={<Comments/>}/>
                             </Route>
                         </Route>
-
-
                     </Route>
-
-
                 </Route>
             </Routes>
-
         </div>
     );
 }

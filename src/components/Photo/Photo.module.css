@@ -1,0 +1,14 @@
+.photo__main {
+    display: flex;
+    border: 1px solid #000;
+
+
+}
+
+.photo__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}

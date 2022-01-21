@@ -1,27 +1,26 @@
 import React, {useEffect, useState} from 'react';
-import {Outlet, useParams} from "react-router-dom";
+import {useParams} from "react-router-dom";
+
+
 import {commentsService} from "../../service/comments.service";
 import {Comment} from "../Comment/Comment";
 
 const Comments = () => {
 
-    const {id} = useParams();
+    const {postId} = useParams();
 
     const [comments, setComments] = useState(null);
-    console.log(id);
 
-    useEffect(()=>{
-        commentsService.getById(id)
+    useEffect(() => {
+        commentsService.getById(postId)
             .then(value => setComments([...value]))
-    },[id])
-    console.log(comments);
+    }, [postId])
 
     return (
         <div>
 
 
             {comments && comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
-            <Outlet/>
 
         </div>
     );

@@ -1,36 +1,42 @@
 import React, {useEffect, useState} from 'react';
 import {Link, Outlet, useParams} from "react-router-dom";
+
+
+import style from './PostsDetail.module.css'
 import {postsService} from "../../service/posts.service";
-import {PostDetail} from "../PostDetail/PostDetail";
-import {Comments} from "../Comments/Comments";
 
 const PostsDetails = () => {
 
-    const [posts,setPosts] = useState({})
-
+    const [posts, setPosts] = useState(null)
 
     const {id} = useParams();
 
-
-    useEffect(()=>{
+    useEffect(() => {
         postsService.getById(id)
             .then(value => setPosts({...value}))
-    },[id])
-
+    }, [id])
 
     return (
-        <div>
-            <h2>User : {posts.userId}</h2>
-            <h2> Id : {posts.id}</h2>
-            <h2>Title : {posts.title}</h2>
-            <p>{posts.body}</p>
-            <Link to={`${id.toString()}/comment`}>
-                <button>Open Comments</button>
-            </Link>
-            <Outlet/>
+        <div className={style.postPage__right_border}>
+            {
+                posts && (
 
+                    <div className={style.postDetail__main}>
+                        <h2>User : {posts.userId}</h2>
+                        <h2> Id : {posts.id}</h2>
+                        <h2>Title : {posts.title}</h2>
+                        <p>{posts.body}</p>
 
+                        <Link to={`${id.toString()}/comment`}>
+                            <button>Open Comments</button>
+                        </Link>
 
+                    </div>
+                )
+            }
+            <div>
+                <Outlet/>
+            </div>
         </div>
     );
 };

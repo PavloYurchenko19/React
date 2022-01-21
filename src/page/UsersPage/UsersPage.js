@@ -15,7 +15,6 @@ const UsersPage = () => {
             <div className={style.right__side_userPage}>
                 <Outlet/>
             </div>
-
         </div>
     );
 };

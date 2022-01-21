@@ -4,26 +4,27 @@ import {Outlet, useParams} from "react-router-dom";
 
 import {albomService} from "../../service/albom.service";
 import {Albom} from "../Albom/Albom";
+import style from "./Alboms.module.css";
 
 const Alboms = () => {
 
     const [alboms, setAlboms] = useState([]);
 
-    const {id,userId} = useParams()
-    console.log(id);
-    console.log(userId);
+    const {id, userId} = useParams()
+
 
     useEffect(() => {
-        console.log(alboms);
 
-    albomService.getById(id)
-        .then(value => setAlboms([...value]))
+        albomService.getById(id)
+            .then(value => setAlboms([...value]))
 
-    },[id]);
+    }, [id]);
 
     return (
-        <div>
-            {alboms.map(albom=><Albom key={albom.id} albom={albom}/>)}
+        <div className={style.photo__main}>
+
+            {alboms.map(albom => <Albom key={albom.id} albom={albom}/>)}
+
             <Outlet/>
         </div>
     );

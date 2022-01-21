@@ -1,0 +1,10 @@
+.post__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    font-size: 25px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+
+}

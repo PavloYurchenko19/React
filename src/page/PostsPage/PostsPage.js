@@ -20,4 +20,4 @@ const PostsPage = () => {
     );
 };
 
-export  {PostsPage};
+export {PostsPage};

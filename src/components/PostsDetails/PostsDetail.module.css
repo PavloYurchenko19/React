@@ -1,0 +1,24 @@
+.postDetail__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px black;
+    justify-content: center;
+    margin: 20px;
+    padding: 10px;
+}
+
+p {
+    font-size: 20px;
+
+}
+
+p:first-letter {
+    padding-left: 10px;
+}
+
+.postPage__right_border {
+    border: 1px solid #000;
+    margin: 20px;
+    height: fit-content;
+}

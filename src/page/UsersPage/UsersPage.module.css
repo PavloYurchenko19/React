@@ -1,6 +1,7 @@
-.users__page_main{
+.users__page_main {
     display: flex;
 }
-.left__side_userPage, .right__side_userPage{
+
+.left__side_userPage, .right__side_userPage {
     width: 50%;
 }

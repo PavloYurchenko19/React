@@ -1,0 +1,30 @@
+.user {
+    font-size: 25px;
+    padding: 10px;
+
+    color: darkblue;
+    width: 50%;
+
+}
+
+.user__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.button__user {
+    display: flex;
+    align-items: center;
+}
+
+button {
+
+    color: darkblue;
+    background: white;
+    border-radius: 50px;
+    padding: 5px;
+    margin: 5px;
+    width: 100px;
+}

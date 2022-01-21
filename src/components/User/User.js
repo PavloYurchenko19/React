@@ -1,27 +1,31 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
+
+import style from './User.module.css'
+
 const User = ({user}) => {
 
     const {id, name, username} = user;
 
     return (
 
-        <div>
+        <div className={style.user__main}>
+            <div className={style.user}>
+                {id}) {name} {username}
+            </div>
 
-            {id}) {name} {username}
-            <Link to={`${id.toString()}/albom`} state={user}>
-                <button>Open albom</button>
-            </Link>
+            <div className={style.button__user}>
 
-            <Link to={id.toString()} state={user}>
-                <button>Open UserDetails</button>
+                <Link to={`${id.toString()}/albom`} state={user}>
+                    <button>Open albom</button>
+                </Link>
 
-            </Link>
-
+                <Link to={id.toString()} state={user}>
+                    <button>Open UserDetails</button>
+                </Link>
+            </div>
         </div>
-
-
     );
 };
 
