@@ -1,0 +1,6 @@
+.postPage__left_side,.postPage__right_side{
+    width: 50%;
+}
+.main__postPage{
+    display: flex;
+}

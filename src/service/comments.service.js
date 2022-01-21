@@ -1,6 +1,6 @@
 import axionService from "./axios.service";
 import {urls} from "../config/urls";
 
-const commentsService ={
-    comments:()=>axionService.get(urls.comments).then(value => value.data)
+export const commentsService ={
+    getById:(id)=>axionService.get(`${urls.comments}?postId=${id}`).then(value => value.data)
 }

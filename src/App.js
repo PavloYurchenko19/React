@@ -1,7 +1,7 @@
 import './App.css';
 import {Route, Routes} from "react-router-dom";
 import {HomePage, PostsPage, UsersPage} from "./page";
-import {Alboms, Photos, Loyout, UserDeteils, UsersPosts} from "./components";
+import {Alboms, Photos, Loyout, UserDeteils, UsersPosts, Comments} from "./components";
 import {PostsDetails} from "./components/PostsDetails/PostsDetails";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
                         <Route path={'users'} element={<UsersPage/>}>
 
                             <Route path={':id/albom'} element={<Alboms/>}>
-                                <Route path={':albumId/photos'} element={<Photos/>}/>
+                                <Route path={':userId/photos'} element={<Photos/>}/>
                             </Route>
 
                             <Route path={':id'} element={<UserDeteils/>}>
@@ -23,7 +23,9 @@ function App() {
                             </Route>
                         </Route>
                         <Route path={'posts'} element={<PostsPage/>}>
-                            <Route path={':id/details'} element={<PostsDetails/>}/>
+                            <Route path={':id/detail'} element={<PostsDetails/>}>
+                                <Route path={':id/comment' } elemetn={<Comments/>}/>
+                            </Route>
                         </Route>
 
 

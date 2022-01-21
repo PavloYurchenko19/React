@@ -5,15 +5,14 @@ import {Photo} from "../Photo/Photo";
 
 const Photos = () => {
 
-    const {id} = useParams();
-    // console.log(id);
+    const {id,userId} = useParams();
 
 
     const [fotos, setFotos] = useState([]);
     useEffect(()=>{
-    fotoService.getById(id)
+    fotoService.getById(userId)
         .then(value => setFotos([...value]))
-    },[id])
+    },[userId])
 
     return (
         <div>
