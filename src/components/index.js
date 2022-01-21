@@ -1,3 +1,5 @@
 export * from './Loyout/Loyout'
 export * from './Alboms/Alboms'
 export * from './UserDeteils/UserDeteils'
+export * from './User/User'
+export * from './Users/Users'
