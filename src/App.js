@@ -13,8 +13,8 @@ function App() {
 
                         <Route path={'users'} element={<UsersPage/>}>
                             <Route path={':id/albom'} element={<Alboms/>}/>
-                            <Route path={':id/details'} element={<UserDeteils/>}>
-                                <Route path={':id/posts'} element={<UsersPosts/>}/>
+                            <Route path={':id/detail'} element={<UserDeteils/>}>
+                                <Route path={':id'} element={<UsersPosts/>}/>
                             </Route>
                         </Route>
                         <Route path={'posts'} element={<PostsPage/>}>

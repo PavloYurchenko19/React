@@ -30,7 +30,7 @@ const UserDeteils = () => {
                             </ul>
                         </div>
                         <div>
-                            <Link to={`${id.toString()}/posts`} >
+                            <Link to={`${id.toString()}`} >
                                 <button>Open posts</button>
                             </Link>
                         </div>
@@ -40,7 +40,11 @@ const UserDeteils = () => {
                 </div>
 
             )}
-            <Outlet/>
+            <div>
+
+                <Outlet/>
+            </div>
+
 
         </div>
     );

@@ -14,10 +14,13 @@ const User = ({user}) => {
                 <button>Open albom</button>
             </Link>
 
-            <Link to={`${id.toString()}/details`} state={user}>
+            <Link to={`${id.toString()}/detail`} state={user}>
                 <button>Open UserDetails</button>
+
             </Link>
+
         </div>
+
 
     );
 };
