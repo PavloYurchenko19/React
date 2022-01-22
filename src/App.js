@@ -3,8 +3,7 @@ import {Navigate, Route, Routes} from "react-router-dom";
 
 
 import {HomePage, PostsPage, UsersPage} from "./page";
-import {Alboms, Comments, Loyout, Photos, UserDeteils, UsersPosts} from "./components";
-import {PostsDetails} from "./components/PostsDetails/PostsDetails";
+import {Alboms, Comments, Loyout, Photos, UserDeteils, UsersPosts,PostsDetails} from "./components";
 
 function App() {
     return (
