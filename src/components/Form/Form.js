@@ -2,41 +2,46 @@ import React, {createContext, useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import {carsService} from "../../service/cars.service";
 
-const Form = ({getCar,removeCarId}) => {
+const Form = ({setNewCar,updateById}) => {
+    const [formError, setFormError] = useState({})
 
+    const {id, model, year, price} = updateById;
     const {
-        register,handleSubmit,formState:{errors}
+        register,handleSubmit,formState:{errors},setValue
     } = useForm();
 
     const [cars,setCars]=useState([])
 
     useEffect(()=>{
+        setValue('model',model)
+        setValue('year',year)
+        setValue('price',price)
+    },[id])
+
+    useEffect(()=>{
        carsService.getAll().then(value => setCars(value))
     },[])
 
-    function send(data){
-        console.log(data);
-        carsService.create(data).then(value => {
-            getCar(value)}).catch(error=>{
-            console.log(error.response.data);
 
-        } )
+    const send = async (car)=>{
+        try {
+            let newCar;
+            if (id){
+                 newCar = await carsService.updateById(id,car);
+            }else {
 
+                newCar= await carsService.create(car)
+            }
+            setNewCar(newCar)
+        }catch (error){
+            setFormError(error.response.data)
+        }
     }
-    function removeCar(e){
-        e.preventDefault()
-
-    }
-    let idFilter = cars.map(value => value.id);
 
 
 
-    const updateCar = (car) => {
 
-        carsService.updateById(car.id,car).then(value => {
-            getCar(value)
-            console.log(value)})
-    };
+
 
     return (
         <div>
@@ -44,23 +49,10 @@ const Form = ({getCar,removeCarId}) => {
                 <div><label>Model : <input type="text" defaultValue={''} {...register('model')}/>  </label></div>
                 <div><label>Price : <input type="text" defaultValue={''} {...register('price')}/> </label></div>
                 <div><label>Year : <input type="text" defaultValue={''} {...register('year')}/> </label></div>
-                <button>Send</button>
-                <button onClick={removeCarId}>delete</button>
+                <button>{id?'Update':"Create"}</button>
             </form>
-            <form onSubmit={removeCar}>
 
-            <div><label>Id : <input type="text"  name={'id'} value={''} onChange={idHendler}  />  </label></div>
 
-            </form>
-            {/*<form onSubmit={handleSubmit(updateCar)}>*/}
-            {/*    <div><label>Id : <input type="text" defaultValue={''} {...register('id')}/>  </label></div>*/}
-
-            {/*    <div><label>Model : <input type="text" defaultValue={''} {...register('model')}/>  </label></div>*/}
-            {/*    <div><label>Price : <input type="text" defaultValue={''} {...register('price')}/> </label></div>*/}
-            {/*    <div><label>Year : <input type="text" defaultValue={''} {...register('year')}/> </label></div>*/}
-            {/*    <button>Update</button>*/}
-
-            {/*</form>*/}
         </div>
     );
 };
