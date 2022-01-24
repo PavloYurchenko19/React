@@ -11,7 +11,8 @@ const Episode = ({episodes}) => {
             {name}
             {air_date}
             {episode}
-            <NavLink to={`${id.toString()}`} state={episodes}>Episode Details</NavLink>
+            <NavLink to={`${id.toString()}/episodDetails`} >Episode Details</NavLink>
+
 
         </div>
     );

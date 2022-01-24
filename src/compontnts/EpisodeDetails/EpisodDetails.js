@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation, useParams} from "react-router-dom";
 import {EpisodesService} from "../../service/episodes.service";
+import {Character} from "../Character/Character";
 
-const EpiseDetails = () => {
+const EpisodDetails = () => {
 
 
     const [episode, setEpisode] = useState(null);
@@ -29,14 +30,25 @@ const EpiseDetails = () => {
 
         }
     }
-    getEpisode()
+    useEffect(()=>{
+        getEpisode()
+
+    },[id])
     console.log(episode);
 
     return (
         <div>
+            {episode && (
+                <div>
+                    <h1>{episode.id}</h1>
+                    <h1>{episode.name}</h1>
+                    {episode.characters}
+                </div>
+
+            )}
 
         </div>
     );
 };
 
-export {EpiseDetails};
+export {EpisodDetails};
