@@ -21,8 +21,8 @@ const getEpisode = async () => {
 }
     if (!state){
         try {
-            await EpisodesService.getById(id)
-
+             let getByIdEpisod = EpisodesService.getById(id);
+            setEpisode(getByIdEpisod)
         }catch (error){
             console.log(error.response.data);
         }
