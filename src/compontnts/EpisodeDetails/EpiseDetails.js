@@ -10,24 +10,26 @@ const EpiseDetails = () => {
     const {id} = useParams();
 
     const {state} = useLocation();
-console.log(state);
 
-// useEffect(()=>{
-//     setEpisode({...state})
-// },[id])
+    useEffect(() => {
+        setEpisode({...state})
 
-const getEpisode = async () => {
+    }, [id])
 
-}
-    if (!state){
-        try {
-             let getByIdEpisod = EpisodesService.getById(id);
-            setEpisode(getByIdEpisod)
-        }catch (error){
-            console.log(error.response.data);
+    const getEpisode = async () => {
+
+
+        if (!state) {
+            try {
+                let getByIdEpisod = await EpisodesService.getById(id);
+               await setEpisode(getByIdEpisod)
+            } catch (error) {
+                console.log(error.response.data);
+            }
+
         }
-
     }
+    getEpisode()
     console.log(episode);
 
     return (
