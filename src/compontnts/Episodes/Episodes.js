@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
+import {Outlet} from "react-router-dom";
+
 import {EpisodesService} from "../../service/episodes.service";
 import {Episode} from "../Episode/Episode";
-import {Outlet} from "react-router-dom";
 import {PageService} from "../../service/page.service";
-
 import style from './Episodes.module.css'
 
 const Episodes = () => {
@@ -11,6 +11,7 @@ const Episodes = () => {
     const [episodes, setEpisodes] = useState([]);
 
     const [info, setInfo] = useState({});
+
     const [pages, setPages] = useState(1);
 
     useEffect(() => {
@@ -35,7 +36,7 @@ const Episodes = () => {
     }
 
     return (
-        <div >
+        <div>
 
             <div className={style.outlet}>
                 {episodes.map(episode => <Episode key={episode.id} episodes={episode}/>)}
@@ -49,7 +50,6 @@ const Episodes = () => {
                 <button onClick={() => nextPage(pages)}>next</button>
             </div>
         </div>
-
     );
 };
 

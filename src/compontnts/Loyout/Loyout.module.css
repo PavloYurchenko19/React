@@ -16,10 +16,10 @@ header a {
 }
 
 .outlet {
-    margin: auto;
     background: black;
     position: relative;
     min-height: calc(100vh - 70px);
+
 
 }
 
@@ -27,7 +27,6 @@ header a {
     background: #000;
     position: absolute;
     bottom: 50%;
-
 
 
 }

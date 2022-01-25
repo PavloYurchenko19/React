@@ -1,12 +1,13 @@
-.episodeDetails{
+.episodeDetails {
     background: #000;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin-left: 180px;
 
 
 }
-.headerDetail{
+
+.headerDetail {
     color: #00FF07;
     height: 100px;
     width: 100%;

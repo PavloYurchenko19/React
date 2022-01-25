@@ -1,6 +1,6 @@
-.boxWthiEpisode{
+.boxWthiEpisode {
     box-shadow: 0 0 10px #00FF07;
-    width: 20%;
+    width: 25%;
     display: flex;
     color: green;
     justify-content: center;
@@ -8,14 +8,16 @@
     flex-direction: column;
     height: 150px;
     text-align: center;
-    margin:auto;
+    margin-left: 80px
 
 }
-.episodeMain{
+
+.episodeMain {
     display: flex;
 }
+
 .boxWthiEpisode a {
-    padding-top:20px ;
+    padding-top: 20px;
     color: #00FF07;
     text-decoration: none;
 }

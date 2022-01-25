@@ -1,4 +1,4 @@
-.disable{
+.disable {
     background: #000;
 }
 
@@ -14,14 +14,16 @@
     column-gap: 20px;
 
 }
-.btn{
+
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 }
-.btn button{
-    border: 1px solid  #00FF07;
+
+.btn button {
+    border: 1px solid #00FF07;
     margin: 20px;
     height: 60px;
     border-radius: 50px;
@@ -29,7 +31,8 @@
     background: #000;
     color: #00FF07;
 }
-.btn button:hover{
+
+.btn button:hover {
     background: #00FF07;
     color: black;
 }
