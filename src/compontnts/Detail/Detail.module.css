@@ -1,0 +1,24 @@
+.boxDetail{
+    width: 25%;
+    color: #00FF07;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    box-shadow: 0 0  10px #00FF07;
+    margin: 20px;
+    padding: 10px;
+    font-size: 20px;
+
+}
+.detailMain{
+    width: 80%;
+    display: flex;
+
+    margin: auto;
+}
+.boxDetail img  {
+    height: 200px;
+    width: 200px;
+}

@@ -1,0 +1,18 @@
+.episodeDetails{
+    background: #000;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+
+
+}
+.headerDetail{
+    color: #00FF07;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}

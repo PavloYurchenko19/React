@@ -1,6 +1,6 @@
 import './App.css';
-import {Route, Routes} from "react-router-dom";
-import {EpisodDetails, Episodes, Loyout, NextOrPreviousPage} from "./compontnts";
+import {Navigate, Route, Routes} from "react-router-dom";
+import {Detail, EpisodeDetails, Episodes, Loyout, NextOrPreviousPage} from "./compontnts";
 
 function App() {
 
@@ -10,11 +10,12 @@ function App() {
 
         <Routes>
             <Route path={'/'} element={<Loyout/>}>
-                <Route path={'episode'} element={<Episodes/>}>
-                    <Route path={":id/episodDetails"} element={<EpisodDetails/>}/>
+                <Route index <Navigate/>
+                <Route path={'episodes'} element={<Episodes/>}/>
+                <Route path={"episodDetails"} element={<EpisodeDetails/>}>
+                    <Route path={'detail'} element={<Detail/>}/>
                 </Route>
 
-                <Route path={'nextOrPreviousPage'} element={<NextOrPreviousPage/>}/>
             </Route>
         </Routes>
 

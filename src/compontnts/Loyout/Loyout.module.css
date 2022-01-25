@@ -1,0 +1,43 @@
+.header {
+    background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkiuW3k-iK047fr1kZ7AmERNFJuEU4v6m8Ag&usqp=CAU");
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+
+}
+
+header a {
+    color: #00FF07;
+    font-size: 30px;
+    text-decoration: none;
+
+}
+
+.outlet {
+    margin: auto;
+    background: black;
+    position: relative;
+    min-height: calc(100vh - 70px);
+
+}
+
+.bgFotoRik {
+    background: #000;
+    position: absolute;
+    bottom: 50%;
+
+
+
+}
+
+.bgFotoMorty {
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+}
+
+img {
+    width: 140px
+}
