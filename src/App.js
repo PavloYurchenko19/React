@@ -15,8 +15,15 @@ handleSubmit,
     }
         = useForm();
 
-    const submit = (e) => {
-        console.log(e.target.cat.value);
+    const submit = (animal) => {
+        if (animal.cat){
+            dispatch({cat:animal.cat})
+        }else if(animal.dog){
+            dispatch({dog:animal.dog})
+            console.log(animal.dog);
+        }
+        console.log(animal.dog);
+
 
     };
 
