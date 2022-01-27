@@ -18,11 +18,11 @@ handleSubmit,
     const submit = (animal) => {
         if (animal.cat){
             dispatch({cat:animal.cat})
+            console.log(animal.cat);
         }else if(animal.dog){
             dispatch({dog:animal.dog})
             console.log(animal.dog);
         }
-        console.log(animal.dog);
 
 
     };
