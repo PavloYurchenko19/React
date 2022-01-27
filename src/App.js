@@ -9,32 +9,31 @@ const reduce = (state,action) => {
 
 function App() {
 const [state,dispatch] = useReducer(reduce,{cat:'',dog:''})
-    let  {
-handleSubmit,
-        register
+
+
+
+    const submit = (e) => {
+    e.preventDefault()
+        console.log(e);
+
+
     }
-        = useForm();
+    const cat = (cat) => {
+        console.log(cat);
+    }
 
-    const submit = (animal) => {
-        if (animal.cat){
-            dispatch({cat:animal.cat})
-            console.log(animal.cat);
-        }else if(animal.dog){
-            dispatch({dog:animal.dog})
-            console.log(animal.dog);
-        }
-
-
-    };
+    const dog = (dog) => {
+      console.log(dog);
+    }
 
     return (
 
-      <div>
+      <div >
           <div>
-              <form onSubmit={handleSubmit(submit)}>
-                  <label> cat<input type="text" defaultValue={''} {...register('cat')}/></label>
+              <form onSubmit={submit}>
+                  <label> cat<input type="text" name={'cat'} value={''}  onChange={cat}/></label>
                   <button> send</button>
-                  <label> dog<input type="text" defaultValue={''} {...register('dog')}/></label>
+                  <label> dog<input type="text" name={'dog'} value={''} onChange={dog} /></label>
                   <button> send</button>
               </form>
           </div>
