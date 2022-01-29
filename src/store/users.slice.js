@@ -3,13 +3,12 @@ import {usersService} from "../service/users.service";
 
 export const getAllUsers = createAsyncThunk(
     'userSlice/getAllUsers',
-    async (_, {dispatch}) => {
+    async (_, {rejectWithValue}) => {
         try {
             const users = await usersService.getAll()
-            dispatch(getAll({users}))
-
+                return users
         } catch (e) {
-
+            return rejectWithValue(e.message)
         }
     }
 )
@@ -32,7 +31,7 @@ const usersSlice = createSlice({
         },
         [getAllUsers.fulfilled]: (state, action) => {
             state.status='fulfilled'
-            state.users = action.payload.users
+            state.users = action.payload
 
         },
         [getAllUsers.rejected]: (state, action) => {
