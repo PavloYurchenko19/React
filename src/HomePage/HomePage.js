@@ -5,7 +5,7 @@ const HomePage = () => {
     return (
         <div>
             <Outlet/>
-            Home page
+
 
         </div>
     );

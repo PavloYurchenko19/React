@@ -1,15 +1,17 @@
 import './App.css';
-import {Outlet, Route, Routes} from "react-router-dom";
+import {Navigate, Outlet, Route, Routes} from "react-router-dom";
 import HomePage from "./HomePage/HomePage";
-import {Users} from "./components";
+import {Loyout, Users} from "./components";
 
 function App() {
   return (
       <div>
           <Routes>
-              <Route path={'/'} element={<HomePage/>}>
-                  <Route path={'/users'} element={<Users/>}/>
-              </Route>
+              <Route index path={"/"} <Navigate to={<Loyout/>}/>
+                  <Route path={'/'} element={<Loyout/>}>
+
+                      <Route path={'/users'} element={<Users/>}/>
+                  </Route>
           </Routes>
           <Outlet/>
 
