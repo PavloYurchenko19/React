@@ -1,0 +1,16 @@
+.car__box {
+    margin: 20px;
+    min-width: 250px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    justify-content: center;
+
+}
+
+.car__box button {
+    margin-top: 20px;
+}

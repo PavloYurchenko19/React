@@ -1,21 +1,27 @@
-nav{
+nav {
     height: 70px;
+    top: 0;
     background: #000;
     display: flex;
     justify-content: center;
+    position: fixed;
+    width: 100%;
     align-items: center;
 
 }
-nav a{
+
+nav a {
     color: snow;
     text-decoration: none;
     padding: 20px;
     font-size: 25px;
 
 }
-a:hover{
+
+a:hover {
     color: darkcyan;
 }
+
 nav a[class="active"] {
     color: darkcyan;
 }

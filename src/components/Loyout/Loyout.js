@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavLink, Outlet} from "react-router-dom";
 
-import style from './Loyout.module.css'
+import './Loyout.module.css'
 
 const Loyout = () => {
     return (
@@ -14,9 +14,8 @@ const Loyout = () => {
                 <NavLink to={'/carsPage'}>Cars Page</NavLink>
             </nav>
             <Outlet/>
-
         </div>
     );
 };
 
-export  {Loyout};
+export {Loyout};

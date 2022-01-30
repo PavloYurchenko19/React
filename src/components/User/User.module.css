@@ -1,0 +1,14 @@
+.user__box {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin: 20px;
+    box-shadow: 0 0 10px black;
+}
+
+.header {
+    text-align: center;
+}
