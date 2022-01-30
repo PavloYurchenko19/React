@@ -11,7 +11,8 @@ const Loyout = () => {
                 <NavLink to={'/postsPage'}>Posts Page</NavLink>
                 <NavLink to={'/'}>Home</NavLink>
                 <NavLink to={'/commentsPage'}>Comments Page</NavLink>
-                <NavLink to={'/carsPage'}>Cars Page</NavLink></nav>
+                <NavLink to={'/carsPage'}>Cars Page</NavLink>
+            </nav>
             <Outlet/>
 
         </div>

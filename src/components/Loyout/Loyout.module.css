@@ -16,6 +16,6 @@ nav a{
 a:hover{
     color: darkcyan;
 }
-a[class='active']{
-    caret-color: darkcyan;
+nav a[class="active"] {
+    color: darkcyan;
 }

@@ -20,6 +20,9 @@ const carsSlice = createSlice({
         status: null,
         error: null,
     },
+    reducers:{
+        createCar:()=>{}
+    }
     extraReducers: {
         [getAllCars.pending]: (state, action) => {
             state.status = 'pending';
