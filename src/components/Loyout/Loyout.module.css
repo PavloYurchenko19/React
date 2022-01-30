@@ -1,0 +1,21 @@
+nav{
+    height: 70px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+nav a{
+    color: snow;
+    text-decoration: none;
+    padding: 20px;
+    font-size: 25px;
+
+}
+a:hover{
+    color: darkcyan;
+}
+a[class='active']{
+    caret-color: darkcyan;
+}

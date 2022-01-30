@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Comments = () => {
+const Form = () => {
+
+
     return (
         <div>
 
@@ -8,4 +10,4 @@ const Comments = () => {
     );
 };
 
-export {Comments};
+export {Form};

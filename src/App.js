@@ -1,22 +1,31 @@
 import './App.css';
 import {Navigate, Outlet, Route, Routes} from "react-router-dom";
-import HomePage from "./HomePage/HomePage";
 import {Loyout, Users} from "./components";
+import {CarsPage, CommentsPage, PostsPage, UsersPage} from "./pages";
 
 function App() {
-  return (
-      <div>
-          <Routes>
-              <Route index path={"/"} <Navigate to={<Loyout/>}/>
-                  <Route path={'/'} element={<Loyout/>}>
+    return (
+        <div>
+            <Routes>
+               <Route path={'/'} element={<Loyout/>}>
+                   <Route path={'usersPage'} element={<UsersPage/>}>
 
-                      <Route path={'/users'} element={<Users/>}/>
-                  </Route>
-          </Routes>
-          <Outlet/>
+                   </Route>
+                   <Route path={'postsPage'} element={<PostsPage/>}>
 
-      </div>
-  );
+                   </Route>
+                   <Route path={'commentsPage'} element={<CommentsPage/>}>
+
+                   </Route>
+                   <Route path={'carsPage'} element={<CarsPage/>}>
+
+                   </Route>
+               </Route>
+            </Routes>
+            <Outlet/>
+
+        </div>
+    );
 }
 
 export default App;

@@ -1,2 +1,5 @@
 export * from './store.config'
 export * from './users.slice'
+export * from './posts.slice'
+export * from './commetns.slice'
+export * from './cars.slice'
