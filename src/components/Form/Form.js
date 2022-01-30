@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
-import {createCar, updateCarById} from "../../store";
+import {createCar, updateCar, updateCarById} from "../../store";
 
 const Form = () => {
 
@@ -15,7 +15,7 @@ const Form = () => {
 
     const {overRideCar} = useSelector(state => state['carsReduce'])
     const {id,model,price,year} = overRideCar
-    console.log(overRideCar);
+    console.log(id);
     useEffect(()=>{
         setValue('model',model)
         setValue('price',price)
@@ -28,9 +28,15 @@ const Form = () => {
 const dispatch = useDispatch();
 
 const submit = (data) => {
+    createCar(data)
+    // const {model,price,year}=data
+    // const car =  {model,
+    //     price:parseInt(price),
+    //     year:parseInt(year)
+    // }
+
     if (id) {
-        console.log({data});
-        dispatch(updateCarById({id},{data}));
+        dispatch(updateCarById({id,data}));
     } else {
         dispatch(createCar({data}));
     }
