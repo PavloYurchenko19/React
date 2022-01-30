@@ -1,25 +1,38 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
-import {createCar} from "../../store";
+import {createCar, updateCarById} from "../../store";
 
 const Form = () => {
 
+    const {
+        handleSubmit,
+        reset,
+        register,
+        setValue
+
+    } = useForm();
+
     const {overRideCar} = useSelector(state => state['carsReduce'])
-    console.log(...overRideCar);
+    const {id,model,price,year} = overRideCar
+    console.log(overRideCar);
+    useEffect(()=>{
+        setValue('model',model)
+        setValue('price',price)
+        setValue('year',year)
+    },[id])
 
 
-const {
-    handleSubmit,
-    reset,
-    register
 
-} = useForm();
 
 const dispatch = useDispatch();
 
 const submit = (data) => {
-dispatch(createCar({data}))
+    if (id){
+        dispatch(updateCarById(data,id))
+    }else {
+        dispatch(createCar({data}))
+    }
     reset()
 }
     return (
@@ -28,7 +41,7 @@ dispatch(createCar({data}))
                 <label>Model: <input type="text" defaultValue={''} {...register('model')}/></label>
                 <label>Price: <input type="text" defaultValue={''} {...register('price')}/></label>
                 <label>Year: <input type="text" defaultValue={''} {...register('year')}/></label>
-                <button>{.id ? 'Update':'Create'}</button>
+                <button>{id ? 'Update': 'Creat'}</button>
             </form>
         </div>
     );

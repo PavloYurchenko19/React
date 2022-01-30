@@ -36,12 +36,24 @@ export const deleteCar = createAsyncThunk(
     }
 )
 
-export const updateCarById = createAsyncThunk(
-    'carsSlice/updateCarById',
+export const getById = createAsyncThunk(
+    'carsSlice/getById',
     async ({id},{dispatch})=>{
         try {
            const overRideCar =await carsService.getById(id)
             dispatch(updateCar({overRideCar}))
+        }catch (e) {
+
+        }
+    }
+)
+export const updateCarById = createAsyncThunk(
+    'carsSlice/updateCarById',
+    async ({id},{data})=>{
+        try {
+            const updateCarToArr = await carsService.updateCarById(id,data)
+            console.log(updateCarToArr);
+
         }catch (e) {
 
         }
@@ -52,7 +64,7 @@ const carsSlice = createSlice({
     name: 'carSlice',
     initialState: {
         cars: [],
-        overRideCar: [],
+        overRideCar:[],
         status: null,
         error: null,
     },
@@ -61,7 +73,7 @@ const carsSlice = createSlice({
             state.cars.push(action.payload.newCar)
         },
         updateCar:(state,action)=>{
-            state.overRideCar.push(action.payload.overRideCar)
+            state.overRideCar = action.payload.overRideCar
         },
 
     },
