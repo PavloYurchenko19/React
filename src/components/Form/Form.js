@@ -28,10 +28,11 @@ const Form = () => {
 const dispatch = useDispatch();
 
 const submit = (data) => {
-    if (id){
-        dispatch(updateCarById(data,id))
-    }else {
-        dispatch(createCar({data}))
+    if (id) {
+        console.log(data,id);
+        dispatch(updateCarById({data}, {id}));
+    } else {
+        dispatch(createCar({data}));
     }
     reset()
 }
