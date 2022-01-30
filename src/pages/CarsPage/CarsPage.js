@@ -10,6 +10,7 @@ const CarsPage = () => {
     useEffect(()=>{
         dispatch(getAllCars())
     },[])
+
     return (
         <div>
             <Form/>

@@ -12,17 +12,59 @@ export const getAllCars = createAsyncThunk(
         }
     }
 )
+export const createCar = createAsyncThunk(
+    'carsSlice/createCar',
+    async ({data},{dispatch})=>{
+        try {
+          const newCar =  await carsService.createCar(data)
+            dispatch(addCar({newCar}))
+        }catch (e) {
+
+        }
+    }
+)
+export const deleteCar = createAsyncThunk(
+    'carsSlice/deleteCar',
+
+    async ({id}, {dispatch})=>{
+        try {
+            await carsService.deleteCarById(id)
+
+        }catch (e) {
+
+        }
+    }
+)
+
+export const updateCarById = createAsyncThunk(
+    'carsSlice/updateCarById',
+    async ({id},{dispatch})=>{
+        try {
+           const overRideCar =await carsService.getById(id)
+            dispatch(updateCar({overRideCar}))
+        }catch (e) {
+
+        }
+    }
+)
 
 const carsSlice = createSlice({
     name: 'carSlice',
     initialState: {
         cars: [],
+        overRideCar: [],
         status: null,
         error: null,
     },
     reducers:{
-        createCar:()=>{}
-    }
+        addCar:(state,action)=>{
+            state.cars.push(action.payload.newCar)
+        },
+        updateCar:(state,action)=>{
+            state.overRideCar.push(action.payload.overRideCar)
+        },
+
+    },
     extraReducers: {
         [getAllCars.pending]: (state, action) => {
             state.status = 'pending';
@@ -38,4 +80,5 @@ const carsSlice = createSlice({
     }
 })
 const carsReduce = carsSlice.reducer;
+export const {addCar,updateCar} = carsSlice.actions
 export default carsReduce
