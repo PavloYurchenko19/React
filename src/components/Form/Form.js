@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {useDispatch, useSelector} from "react-redux";
 import {createCar, updateCar, updateCarById} from "../../store";
+import Joi from "joi";
 
 const Form = () => {
 
@@ -11,7 +12,7 @@ const Form = () => {
         register,
         setValue
 
-    } = useForm();
+    } = useForm({resolver:joiResolver()});
 
     const {overRideCar} = useSelector(state => state['carsReduce'])
     const {id,model,price,year} = overRideCar
