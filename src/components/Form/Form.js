@@ -29,8 +29,8 @@ const dispatch = useDispatch();
 
 const submit = (data) => {
     if (id) {
-        console.log(data,id);
-        dispatch(updateCarById({data}, {id}));
+        console.log({data});
+        dispatch(updateCarById({id},{data}));
     } else {
         dispatch(createCar({data}));
     }
@@ -40,8 +40,8 @@ const submit = (data) => {
         <div>
             <form onSubmit={handleSubmit(submit)}>
                 <label>Model: <input type="text" defaultValue={''} {...register('model')}/></label>
-                <label>Price: <input type="text" defaultValue={''} {...register('price')}/></label>
-                <label>Year: <input type="text" defaultValue={''} {...register('year')}/></label>
+                <label>Price: <input type="number" defaultValue={''} {...register('price')}/></label>
+                <label>Year: <input type="number" defaultValue={''} {...register('year')}/></label>
                 <button>{id ? 'Update': 'Creat'}</button>
             </form>
         </div>
