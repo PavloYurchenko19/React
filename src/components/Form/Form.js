@@ -1,45 +1,27 @@
-import React, {useReducer} from 'react';
-import {useForm} from "react-hook-form";
-import Animals from "../Animals/Animals";
+import React, {useRef} from 'react';
 
-const reducer = (state, action) => {
-    switch (action.type) {
-        case 'animal':
-            return {...state, cat: action.payload}
-        default:
-            return state
+const Form = ({dispatch}) => {
+
+    const catInput = useRef();
+    const dogInput = useRef();
+
+    const submit = (e) => {
+        e.preventDefault()
+        e.target.reset()
     }
-
-};
-
-
-const Form = ({getFormData}) => {
-
-    const [state, dispatch] = useReducer(reducer, {cat: '', dog: ''});
-
-    const {
-        register, handleSubmit, reset
-    } = useForm();
-
-    const submit = (data) => {
-
-        getFormData(data, dispatch);
-        reset()
-    }
-
 
     return (
         <div>
-
-            <form onSubmit={handleSubmit(submit)}>
-                <label>Cat: <input type="text" defaultValue={''} {...register('cat')}/></label>
-                <button>save</button>
-                <label>Dog: <input type="text" defaultValue={''} {...register('dog')}/></label>
-                <button>save</button>
+            <form onSubmit={submit}>
+                <label>Cats: <input type="text" ref={catInput}/></label>
+                <button onClick={() => dispatch({type: 'addCat', payload: catInput.current.value})}>Sent</button>
+                <label>Dogs: <input type="text" ref={dogInput}/></label>
+                <button onClick={() => dispatch({type: 'addDog', payload: dogInput.current.value})}>Sent</button>
             </form>
-            <Animals state={state}/>
+
+
         </div>
     );
 };
 
-export default Form;
+export {Form};
