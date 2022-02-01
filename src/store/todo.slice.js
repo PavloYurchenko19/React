@@ -5,7 +5,6 @@ export const todoSlice =createSlice({
     initialState:{
         todo:[],
         checkLine:[],
-        ch:false
     },
     reducers:{
         addTodo:(state,action)=>{
@@ -18,14 +17,15 @@ export const todoSlice =createSlice({
         deleteTodo:(state,action)=>{
             state.todo = state.todo.filter(value=>value.id !== action.payload.id)
         },
-        changeCheckBoxValue:async (state,action)=>{
-            state.todo = state.todo.filter(value=>value.id === action.payload.id)
 
+        changeStatus:(state,action)=>{
+           let oneObject = state.todo.filter(value => value.id === action.payload.id)
+           state.oneObject = !oneObject['checkValue']
 
         }
     }
 
 })
 const todoReducer = todoSlice.reducer
-export const {addTodo,deleteTodo,changeCheckBoxValue} = todoSlice.actions;
+export const {addTodo,deleteTodo,changeStatus} = todoSlice.actions;
 export default todoReducer
