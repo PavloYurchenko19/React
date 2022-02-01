@@ -1,10 +1,11 @@
 import './App.css';
-import {Form} from "./components";
+import {Form, TodoArr} from "./components";
 
 function App() {
   return (
       <div>
           <Form/>
+          <TodoArr/>
 
       </div>
   );

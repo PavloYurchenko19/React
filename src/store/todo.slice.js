@@ -3,12 +3,28 @@ import {createSlice} from "@reduxjs/toolkit";
 export const todoSlice =createSlice({
     name:"todoSlice",
     initialState:{
-        todo:[]
+        todo:[],
+        checkLine:[]
     },
     reducers:{
+        addTodo:(state,action)=>{
+            state.todo.push({
+                id:new Date().getTime(),
+                name:action.payload.todoElement,
+                checkValue:false
+            })
+        },
+        deleteTodo:(state,action)=>{
+            state.todo = state.todo.filter(value=>value.id !== action.payload.id)
+        },
+        changeCheckBoxValue:(state,action)=>{
+            state.checkLine = state.todo.filter(value => value.id === action.payload.id)
 
+
+        }
     }
 
 })
 const todoReducer = todoSlice.reducer
+export const {addTodo,deleteTodo,changeCheckBoxValue} = todoSlice.actions;
 export default todoReducer
