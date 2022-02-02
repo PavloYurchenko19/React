@@ -1,0 +1,18 @@
+.line__through {
+    text-decoration: line-through;
+}
+
+.line__through_less {
+    text-decoration: none;
+}
+
+.main__todo {
+    font-size: 25px;
+}
+
+.one__todo {
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
