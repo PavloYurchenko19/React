@@ -1,25 +1,29 @@
-import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {changeStatus, deleteTodo} from "../../store";
+import React, {useRef, useState} from 'react';
+import {useDispatch} from "react-redux";
+
+import {deleteTodo} from "../../store";
 import style from './Todo.module.css'
 
 const Todo = ({todo}) => {
+
+    const [boolValue, setBoolValue] = useState(false);
+
     const {id, name} = todo
     const dispatch = useDispatch();
-    const {checkLine, ch} = useSelector(state => state['todoReducer'])
-    console.log(checkLine );
-    // console.log(checkLine[0].checkValue);
+    const checkBoxRef = useRef();
 
+    const changeCheckbox = (data) => {
+        setBoolValue(data)
+    }
 
     return (
         <div className={style.todo__main}>
-            <div className={checkLine ? style.line__through : style.line__through_less}>
-
-                <input onClick={() => dispatch(changeStatus({id}))} type="checkbox" value={checkLine}/>
+            <input type="checkbox" ref={checkBoxRef} aria-checked={"false"}
+                   onClick={() => changeCheckbox(checkBoxRef.current.checked)}/>
+            <div className={boolValue ? style.line__through : style.line__through_less}>
                 {name}
             </div>
             <button onClick={() => dispatch(deleteTodo({id}))}>delete</button>
-
         </div>
     );
 };

@@ -6,7 +6,6 @@ function App() {
       <div>
           <Form/>
           <TodoArr/>
-
       </div>
   );
 }
