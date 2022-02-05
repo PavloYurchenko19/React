@@ -12,15 +12,15 @@ class User {
 
 const user = new User('Max', 18, 'male')
 
-const sum = (a:number,b:number) => {
+const sum = (a:number,b:number):number => {
   return a + b
 }
 
-const showSum = (a:number,b:number)=>{
+const showSum = (a:number,b:number):void=>{
     console.log(a + b);
 }
 
-const incAge = (someUser:object,inc:number)=>{
+const incAge = (someUser:object,inc:number):object=>{
     someUser['age'] += inc
     return someUser
 }
