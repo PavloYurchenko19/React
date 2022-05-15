@@ -1,9 +1,12 @@
 import './App.css';
+import Users from "./components/Users";
 
 function App() {
   return (
       <div>
-            just coding
+          <Users/>
+          pavlo
+          <h2>nanana</h2>
       </div>
   );
 }
