@@ -1,13 +1,18 @@
 import {useEffect} from "react";
-import {usersService} from "../services/users.service";
+import {useDispatch, useSelector} from "react-redux";
+import {getAllUsers} from "../store/usres.slice";
 
 function Users() {
-    useEffect(()=>{
-        usersService.getAll().then(value => console.log(value) )
-    },[])
-    return(
 
-    <h2>pavlo</h2>
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getAllUsers());
+    }, [])
+    const {users} = useSelector(state => state['userReducer']);
+    console.log(users);
+    return (
+
+        <h2>[av</h2>
 
     )
 

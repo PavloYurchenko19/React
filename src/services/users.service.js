@@ -1,6 +1,6 @@
 import {axiosService} from "./axios.service";
-import urls from "../config/urls";
+import {urls} from "../config/urls";
 
 export const usersService = {
-    getAll: () => axiosService.get(`${urls}`).then(value => value.json())
+    getAll: () => axiosService.get(`${urls.users}`).then(value => value.data)
 }
